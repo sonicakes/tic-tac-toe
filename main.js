@@ -22,6 +22,8 @@ $(document).ready(function() {
   let emptySquares = 9;
   //construct an array via new Array(9) method
   const arrayOfValues = [];
+  const arrayOfNods = [];
+  const arrayOfCrosses = [];
   const arrayOfIds = [];
   // A $( document ).ready() block.
   //compare with winning combos function
@@ -39,18 +41,24 @@ $(document).ready(function() {
     if (currentPlayer === "X") {
       $(this).text("X");
       currentPlayer = "0";
+      arrayOfCrosses.push($(this).text());
     } else {
       $(this).text("0");
       currentPlayer = "X";
+      arrayOfNods.push($(this).text());
+
     }
 
     arrayOfValues.push($(this).text());
     arrayOfIds.push($(this).attr("id"));
-    console.log(arrayOfValues);
-    console.log(arrayOfIds);
+    console.log(`this is the values we got from clicking:${arrayOfValues}`);
+    console.log(`this is the ids array: ${arrayOfIds}`);
+    console.log(`this is how many nods we have so far: ${arrayOfNods}`);
+    console.log(`this is how many crosses we got so far:${arrayOfCrosses}`);
     //reduces number of empty squares
     emptySquares--;
-    console.log(emptySquares);
+    console.log(`this is how many empty squares we have got left: ${emptySquares}`);
+    console.log("**********************click again*****************");
   };
   //function to hold the logic of the game
 
