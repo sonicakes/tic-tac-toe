@@ -54,32 +54,38 @@ $(document).ready(function() {
     }
 
 
-
     arrayOfValues.push($(this).text());
     arrayOfIds.push($(this).attr("id"));
     //how to establish a WINNER
     //array of IDs/NODs includes any number of winning combos
-    let winXstatement = `end game! X wins!`;
-    if (idsOfNods.includes(0) && idsOfNods.includes(1) && idsOfNods.includes(2)) {
-      console.log(winXstatement);
-      alert("you won X");
-      return winXstatement;
+
+    if (idsOfNods.includes("0") && idsOfNods.includes("1") && idsOfNods.includes("2")) {
+      console.log(`0 wins`);
+      return `0 wins`;
+
+
     }
-    if (idsOfNods.includes(2) && idsOfNods.includes(4) && idsOfNods.includes(6)) {
-      console.log(winXstatement);
-      return winXstatement;
+    if (idsOfNods.includes("2") && idsOfNods.includes("4") && idsOfNods.includes("6")) {
+
+      console.log(`0 wins`);
+      return `0 wins`;
     }
-    if (idsOfNods.includes(0) && idsOfNods.includes(4) && idsOfNods.includes(8)) {
-      console.log(winXstatement);
-      return winXstatement;
+    if (idsOfNods.includes("0") && idsOfNods.includes("4") && idsOfNods.includes("8")) {
+
+
+      console.log(`0 wins`);
+      return `0 wins`;
     }
-    if (idsOfNods.includes(3) && idsOfNods.includes(4) && idsOfNods.includes(5)) {
-      console.log(winXstatement);
-      return winXstatement;
+    if (idsOfNods.includes("3") && idsOfNods.includes("4") && idsOfNods.includes("5")) {
+
+
+      console.log(`0 wins`);
+      return `0 wins`;
     }
-    if (idsOfNods.includes(6) && idsOfNods.includes(7) && idsOfNods.includes(8)) {
-      console.log(winXstatement);
-      return winXstatement;
+    if (idsOfNods.includes("6") && idsOfNods.includes("7") && idsOfNods.includes("8")) {
+
+      console.log(`0 wins`);
+      return `0 wins`;
     }
 
     console.log(`this is the values we got from clicking:${arrayOfValues}`);
