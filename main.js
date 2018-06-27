@@ -1,22 +1,51 @@
 $(document).ready(function() {
-  console.log("ready!");
 
   let currentPlayer = "X";
   let isGameActive = false;
-  // let emptySquares = 9;
 
-  const win1 = [0, 1, 2];
-  const win2 = [2, 4, 6]; //diagonal
-  const win3 = [0, 4, 8];
-  const win4 = [3, 4, 5];
-  const win5 = [6, 7, 8];
+  // const win1 = [0, 1, 2];
+  // const win2 = [2, 4, 6];
+  // const win3 = [0, 4, 8];
+  // const win4 = [3, 4, 5];
+  // const win5 = [6, 7, 8];
+  // const win6 = [0, 3, 6];
+  // const win7 = [1, 4, 7];
+  // const win8 = [2, 5, 8];
 
-  // const arrayOfValues = [];
-  // const arrayOfNods = [];
-  // const arrayOfCrosses = [];
-  // const arrayOfIds = [];
   let idsOfNods = [];
   let idsOfCrosses = [];
+
+  const checkIfPlayerHasWon = function(arrayToCheck) {
+    if (arrayToCheck.includes("0") && arrayToCheck.includes("1") && arrayToCheck.includes("2")) {
+      $('#0').addClass('winningCombo');
+      $('#1').addClass('winningCombo');
+      $('#2').addClass('winningCombo');
+      return true;
+    }
+    if (arrayToCheck.includes("2") && arrayToCheck.includes("4") && arrayToCheck.includes("6")) {
+      return true;
+    }
+    if (arrayToCheck.includes("0") && arrayToCheck.includes("4") && arrayToCheck.includes("8")) {
+      return true;
+    }
+    if (arrayToCheck.includes("3") && arrayToCheck.includes("4") && arrayToCheck.includes("5")) {;
+      return true;
+    }
+    if (arrayToCheck.includes("6") && arrayToCheck.includes("7") && arrayToCheck.includes("8")) {
+      return true;
+    }
+    if (arrayToCheck.includes("0") && arrayToCheck.includes("3") && arrayToCheck.includes("6")) {
+      return true;
+    }
+    if (arrayToCheck.includes("1") && arrayToCheck.includes("4") && arrayToCheck.includes("7")) {
+      return true;
+    }
+    if (arrayToCheck.includes("2") && arrayToCheck.includes("5") && arrayToCheck.includes("8")) {
+      return true;
+    }
+
+    return false;
+  }
 
   const newGame = function() {
     // X is always the first player in any game
@@ -35,17 +64,18 @@ $(document).ready(function() {
   }
 
   newGame();
+
   const whenClicked = function() {
     //is the game active?
     if (!isGameActive) {
-      alert("game over! press the NEW GAME button");
+      $('#message').html("game over! press the NEW GAME button");
       return;
     }
 
     // Check if square that was clicked is empty
     if ($(this).text() !== "") {
       //alert the user that they cant click twice on a buton
-      alert("you cant click twice, sorry!");
+      $('#message').html("you cant click twice, sorry!");
       return;
     }
 
@@ -59,79 +89,27 @@ $(document).ready(function() {
       idsOfNods.push($(this).attr("id"));
     }
 
-    // Check if there any winning combinations for 0
-    if (idsOfNods.includes("0") && idsOfNods.includes("1") && idsOfNods.includes("2")) {
-      console.log(`0 wins`);
+    // Check if a player has won
+    if (checkIfPlayerHasWon(idsOfNods)) {
       isGameActive = false;
-      return `0 wins`;
-    }
-    if (idsOfNods.includes("2") && idsOfNods.includes("4") && idsOfNods.includes("6")) {
-      console.log(`0 wins`);
+      $('#message').html(`congrats, player 0, you have won!!!`);
+      return;
+    };
+
+    if (checkIfPlayerHasWon(idsOfCrosses)) {
       isGameActive = false;
+      $('#message').html(`congrats, player X, you have won!!!`);
+      return;
+    };
 
-      return `0 wins`;
-    }
-    if (idsOfNods.includes("0") && idsOfNods.includes("4") && idsOfNods.includes("8")) {
-      console.log(`0 wins`);
-      isGameActive = false;
-
-      return `0 wins`;
-    }
-    if (idsOfNods.includes("3") && idsOfNods.includes("4") && idsOfNods.includes("5")) {
-      console.log(`0 wins`);
-      isGameActive = false;
-
-      return `0 wins`;
-    }
-    if (idsOfNods.includes("6") && idsOfNods.includes("7") && idsOfNods.includes("8")) {
-      console.log(`0 wins`);
-      isGameActive = false;
-
-      return `0 wins`;
-    }
-
-    // Check if there any winning combinations for X
-    if (idsOfCrosses.includes("0") && idsOfCrosses.includes("1") && idsOfCrosses.includes("2")) {
-      console.log(`X wins`);
-      isGameActive = false;
-
-      return `X wins`;
-    }
-    if (idsOfCrosses.includes("2") && idsOfCrosses.includes("4") && idsOfCrosses.includes("6")) {
-      console.log(`X wins`);
-      isGameActive = false;
-
-      return `X wins`;
-    }
-    if (idsOfCrosses.includes("0") && idsOfCrosses.includes("4") && idsOfCrosses.includes("8")) {
-      console.log(`X wins`);
-      isGameActive = false;
-
-      return `X wins`;
-    }
-    if (idsOfCrosses.includes("3") && idsOfCrosses.includes("4") && idsOfCrosses.includes("5")) {
-      console.log(`X wins`);
-      isGameActive = false;
-
-      return `X wins`;
-    }
-    if (idsOfCrosses.includes("6") && idsOfCrosses.includes("7") && idsOfCrosses.includes("8")) {
-      console.log(`X wins`);
-      isGameActive = false;
-
-      return `X wins`;
-    }
-
-    // TODO check if there are no empty squares left and alert GAME OVER
+    // check if there are no empty squares left and alert GAME OVER
     let numberOfEmptySquares = $(".box:empty").length;
     console.log(`There are ${numberOfEmptySquares} empty squares`);
 
     if (numberOfEmptySquares < 1) {
-      alert("GAME OVER - It's a draw");
+      isGameActive = false;
+      $('#message').html("GAME OVER - It's a draw");
     }
-
-
-
   }
 
 

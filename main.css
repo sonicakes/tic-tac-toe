@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Indie+Flower'); */
-
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 body {
   font-family: 'Indie Flower', cursive;
 }
@@ -28,6 +27,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.winningCombo {
+  background-color: green;
 }
 
 .box:hover {
