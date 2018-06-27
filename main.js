@@ -16,6 +16,8 @@ $(document).ready(function() {
   const win3 = [0, 4, 8];
   const win4 = [3, 4, 5];
   const win5 = [6, 7, 8];
+  //
+
   //2. add jquery click event to boxes that:
   //2a.sets inner html to X or 0, depending on our currentPlayer
   //2b.swaps currentPlayer
@@ -25,12 +27,9 @@ $(document).ready(function() {
   const arrayOfNods = [];
   const arrayOfCrosses = [];
   const arrayOfIds = [];
+  const idsOfNods = [];
+  const idsOfCrosses = [];
   // A $( document ).ready() block.
-  //compare with winning combos function
-  const compare = function() {
-    const toCompare = arrayOfIds.join("");
-    console.log(toCompare);
-  }
 
   //turn
   //we call the function newGame() here, otherwise it wouldnt be available!
@@ -38,23 +37,57 @@ $(document).ready(function() {
   //function that handles what happens after you click on any square
   const whenClicked = function() {
     // debugger;
+
+    // TODO Check if square that was clicked is empty
+    // TODO If it is not empty, we need to stop and not do anything else
+
     if (currentPlayer === "X") {
       $(this).text("X");
       currentPlayer = "0";
       arrayOfCrosses.push($(this).text());
+      idsOfCrosses.push($(this).attr("id"));
     } else {
       $(this).text("0");
       currentPlayer = "X";
       arrayOfNods.push($(this).text());
-
+      idsOfNods.push($(this).attr("id"));
     }
+
+
 
     arrayOfValues.push($(this).text());
     arrayOfIds.push($(this).attr("id"));
+    //how to establish a WINNER
+    //array of IDs/NODs includes any number of winning combos
+    let winXstatement = `end game! X wins!`;
+    if (idsOfNods.includes(0) && idsOfNods.includes(1) && idsOfNods.includes(2)) {
+      console.log(winXstatement);
+      alert("you won X");
+      return winXstatement;
+    }
+    if (idsOfNods.includes(2) && idsOfNods.includes(4) && idsOfNods.includes(6)) {
+      console.log(winXstatement);
+      return winXstatement;
+    }
+    if (idsOfNods.includes(0) && idsOfNods.includes(4) && idsOfNods.includes(8)) {
+      console.log(winXstatement);
+      return winXstatement;
+    }
+    if (idsOfNods.includes(3) && idsOfNods.includes(4) && idsOfNods.includes(5)) {
+      console.log(winXstatement);
+      return winXstatement;
+    }
+    if (idsOfNods.includes(6) && idsOfNods.includes(7) && idsOfNods.includes(8)) {
+      console.log(winXstatement);
+      return winXstatement;
+    }
+
     console.log(`this is the values we got from clicking:${arrayOfValues}`);
     console.log(`this is the ids array: ${arrayOfIds}`);
-    console.log(`this is how many nods we have so far: ${arrayOfNods}`);
-    console.log(`this is how many crosses we got so far:${arrayOfCrosses}`);
+    console.log(`this is how many nods we have so far: ${arrayOfNods} and their ids are the following:`);
+    console.log(`${idsOfNods}`);
+    console.log(`this is how many crosses we got so far:${arrayOfCrosses} and their ids are the following:`);
+    console.log(`${idsOfCrosses}`);
     //reduces number of empty squares
     emptySquares--;
     console.log(`this is how many empty squares we have got left: ${emptySquares}`);
@@ -72,7 +105,6 @@ $(document).ready(function() {
   //exit the game, declare WINNER
   //exit game with a draw
   //we can only click if there are empty squares, i.e array.length=<9
-
 
 
 
