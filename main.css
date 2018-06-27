@@ -33,3 +33,7 @@ h1 {
 .box:hover {
   cursor: pointer;
 }
+
+.greeny {
+  background-color: green;
+}
