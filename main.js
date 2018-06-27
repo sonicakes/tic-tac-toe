@@ -37,6 +37,7 @@ $(document).ready(function() {
       console.log(`0 wins`);
       //TODO whyit doesnt work???????
       for (var i = 0; i < idsOfNods.length; i++) {
+        debugger;
         $(idsOfNods[i]).addClass("greeny");
       }
       return `0 wins`;
@@ -86,8 +87,13 @@ $(document).ready(function() {
 
   $(".box").on("click", whenClicked);
 });
-
-
+// 
+// '#' + idsOfNods.join(', #')
+// "#0, #1, #2"
+// $( '#' + idsOfNods.join(', #') )
+// jQuery.fn.init(3) [div#0.box, div#1.box, div#2.box, prevObject: jQuery.fn.init(1)]
+// $( '#' + idsOfNods.join(', #') ).addClass('greeny')
+// jQuery.fn.init(3) [div#0.box.greeny, div#1.box.greeny, div#2.box.greeny, prevObject: jQuery.fn.init(1)]
 
 
 
