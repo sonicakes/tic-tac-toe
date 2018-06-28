@@ -16,8 +16,8 @@ body {
   max-width: 200px;
   max-height: 300px;
   border: 2px solid #000080;
-  margin-left: 45%;
-  margin-bottom: 10px;
+  /*margin-left: 45%;*/
+  margin-bottom: 1rem;
   color: white;
   background-color: #008000;
   border-radius: 10px;
@@ -29,8 +29,8 @@ body {
   cursor: pointer;
 }
 
-#landing {
-  background-image: url("tic-tac.jpg");
+body {
+  background-image: url("bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -38,12 +38,12 @@ body {
   width: 100%;
 }
 
-#landing .overlay {
-  background-color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  width: 100%;
-  min-height: 1000px;
-}
+/*#landing .overlay {*/
+  /*background-color: rgba(255, 255, 255, 0.5);*/
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*min-height: 1000px;*/
+/*}*/
 
 h1 {
   text-align: center;
@@ -54,13 +54,17 @@ h1 {
 
 .info {
   text-align: center;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .board {
   width: 600px;
   height: 600px;
   margin: 0 auto;
-  background-color: #000080;
+  background-color: rgba(24,24,24,0.8);
   color: #fff;
   /* border: 6px solid grey; */
   border-radius: 10px;
@@ -70,18 +74,21 @@ h1 {
 }
 
 .box {
-  border: 6px solid #800000;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border: 2px solid #fff;
   border-radius: 2px;
   font-family: 'Poor Story', cursive;
   font-size: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .winningCombo {
   background-color: #008000;
-  text-decoration: line-through;
+  /*text-decoration: line-through;*/
   /* text-decoration: line-through;
   animation: strike 4s linear; */
 }
@@ -91,7 +98,9 @@ h1 {
 }
 
 #message {
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: white;
   display: block;
+  min-height: 40px;
+  border-radius: 20px;
 }

@@ -80,7 +80,13 @@ $(document).ready(function() {
 
     // Clear all the squares
     $(".box").html("");
+
+    // Clear the game message
     $('#message').html("");
+
+    // Remove winningCombo class
+    $('.winningCombo').removeClass('winningCombo');
+
     // Set the game state to active
     isGameActive = true;
 
