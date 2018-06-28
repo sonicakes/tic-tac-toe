@@ -3,20 +3,10 @@ body {
   font-family: 'Titan One', cursive;
 }
 
-@keyframes strike {
-  from {
-    text-decoration-color: transparent;
-  }
-  to {
-    text-decoration-color: auto;
-  }
-}
-
 #newGame {
   max-width: 200px;
   max-height: 300px;
   border: 2px solid #000080;
-  /*margin-left: 45%;*/
   margin-bottom: 1rem;
   color: white;
   background-color: #008000;
@@ -37,13 +27,6 @@ body {
   min-height: 1000px;
   width: 100%;
 }
-
-/*#landing .overlay {*/
-  /*background-color: rgba(255, 255, 255, 0.5);*/
-  /*position: absolute;*/
-  /*width: 100%;*/
-  /*min-height: 1000px;*/
-/*}*/
 
 h1 {
   text-align: center;
@@ -66,7 +49,6 @@ h1 {
   margin: 0 auto;
   background-color: rgba(24,24,24,0.8);
   color: #fff;
-  /* border: 6px solid grey; */
   border-radius: 10px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
@@ -88,9 +70,6 @@ h1 {
 
 .winningCombo {
   background-color: #008000;
-  /*text-decoration: line-through;*/
-  /* text-decoration: line-through;
-  animation: strike 4s linear; */
 }
 
 .box:hover {
