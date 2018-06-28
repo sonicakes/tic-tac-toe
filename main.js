@@ -3,15 +3,6 @@ $(document).ready(function() {
   let currentPlayer = "X";
   let isGameActive = false;
 
-  // const win1 = [0, 1, 2];
-  // const win2 = [2, 4, 6];
-  // const win3 = [0, 4, 8];
-  // const win4 = [3, 4, 5];
-  // const win5 = [6, 7, 8];
-  // const win6 = [0, 3, 6];
-  // const win7 = [1, 4, 7];
-  // const win8 = [2, 5, 8];
-
   let idsOfNods = [];
   let idsOfCrosses = [];
 
@@ -80,7 +71,13 @@ $(document).ready(function() {
 
     // Clear all the squares
     $(".box").html("");
+
+    // Clear the game message
     $('#message').html("");
+
+    // Remove winningCombo class
+    $('.winningCombo').removeClass('winningCombo');
+
     // Set the game state to active
     isGameActive = true;
 
@@ -88,7 +85,7 @@ $(document).ready(function() {
     idsOfNods = [];
     idsOfCrosses = [];
 
-  }
+  };
 
   newGame();
 
@@ -137,7 +134,7 @@ $(document).ready(function() {
       isGameActive = false;
       $('#message').html("GAME OVER - It's a draw");
     }
-  }
+  };
 
 
   $(".box").on("click", whenClicked);
