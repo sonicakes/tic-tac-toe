@@ -1,9 +1,11 @@
 # Tic Tac Toe Game
 
-### Link to live site
- https://sonicakes.github.io/tic-tac-toe/
+
  ## This is a project 00 for GA course
- 
+
+ ### Link to live site
+  https://sonicakes.github.io/tic-tac-toe/
+  
  ## Big Goals
 
 1. Build a web application from scratch, without a starter codebase
