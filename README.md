@@ -2,6 +2,8 @@
 
 ### Link to live site
  https://sonicakes.github.io/tic-tac-toe/
+ ## This is a project 00 for GA course
+ 
  ## Big Goals
 
 1. Build a web application from scratch, without a starter codebase
