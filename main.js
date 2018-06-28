@@ -23,24 +23,51 @@ $(document).ready(function() {
       return true;
     }
     if (arrayToCheck.includes("2") && arrayToCheck.includes("4") && arrayToCheck.includes("6")) {
+      $('#2').addClass('winningCombo');
+      $('#4').addClass('winningCombo');
+      $('#6').addClass('winningCombo');
+
       return true;
     }
     if (arrayToCheck.includes("0") && arrayToCheck.includes("4") && arrayToCheck.includes("8")) {
+      $('#0').addClass('winningCombo');
+      $('#4').addClass('winningCombo');
+      $('#8').addClass('winningCombo');
+
       return true;
     }
-    if (arrayToCheck.includes("3") && arrayToCheck.includes("4") && arrayToCheck.includes("5")) {;
+    if (arrayToCheck.includes("3") && arrayToCheck.includes("4") && arrayToCheck.includes("5")) {
+      $('#3').addClass('winningCombo');
+      $('#4').addClass('winningCombo');
+      $('#5').addClass('winningCombo');
+
       return true;
     }
     if (arrayToCheck.includes("6") && arrayToCheck.includes("7") && arrayToCheck.includes("8")) {
+      $('#6').addClass('winningCombo');
+      $('#7').addClass('winningCombo');
+      $('#8').addClass('winningCombo');
+
       return true;
     }
     if (arrayToCheck.includes("0") && arrayToCheck.includes("3") && arrayToCheck.includes("6")) {
+      $('#0').addClass('winningCombo');
+      $('#3').addClass('winningCombo');
+      $('#6').addClass('winningCombo');
+
       return true;
     }
     if (arrayToCheck.includes("1") && arrayToCheck.includes("4") && arrayToCheck.includes("7")) {
+      $('#1').addClass('winningCombo');
+      $('#4').addClass('winningCombo');
+      $('#7').addClass('winningCombo');
+
       return true;
     }
     if (arrayToCheck.includes("2") && arrayToCheck.includes("5") && arrayToCheck.includes("8")) {
+      $('#2').addClass('winningCombo');
+      $('#5').addClass('winningCombo');
+      $('#8').addClass('winningCombo');
       return true;
     }
 
@@ -53,7 +80,7 @@ $(document).ready(function() {
 
     // Clear all the squares
     $(".box").html("");
-
+    $('#message').html("");
     // Set the game state to active
     isGameActive = true;
 
